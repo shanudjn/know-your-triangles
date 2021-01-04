@@ -4,6 +4,9 @@ body{
     margin: auto;
     font-family: 'Montserrat', sans-serif;
 }
+div{
+    margin: 1rem;    
+}
 .generic-quiz input{
     margin: 0.5rem;
     padding: 0.5rem;
@@ -16,7 +19,11 @@ body{
     font-family: 'Montserrat', sans-serif;
     border-radius: 4px; 
 }
-.select-triangle-div{
+.select-triangle-div select{
     /* display: block; */
     max-width: 400px;
+    font-family: 'Montserrat', sans-serif;
+    margin-left:0.5rem;
+    padding: 0.5rem;
+
 }
