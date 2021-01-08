@@ -1,30 +1,33 @@
 questions = [
     {
-        question: '\nQ : Wanda Maximoff has done some magic on Hulk and he is on his way to destroy a city, whom do you send to stop Hulk ?',
-        options: ['Captain America', 'Black Widow', 'Iron Man', 'Ant Man'],
-        answer: '2'
+        question: '\nQ : If a triangle has angles 125 deg, 25 deg, 30 deg. Is it an obtuse triangle?',
+        options: ['Yes', 'No'],
+
     },
     {
-        question: '\nQ : Name Thor`s hammer?',
-        options: ['Vanir', 'Mjolnir', 'Aesir', 'Norn'],
-        answer: '1'
+        question: '\nQ : If a triangle has angles 115 deg, 25 deg, 40 deg. Is it an acute triangle?',
+        options: ['Yes', 'No'],
+
     },
     {
-        question: '\nQ : What is Captain America`s shield made off?',
-        options: ['Adamantium', 'Vibranium', 'Promethium', 'Carbonadium'],
-        answer: '1'
+        question: '\nQ : If a triangle has 2 sides with equal lengths and 750 angle between them. What is the type of triangle?',
+        options: ['Equilateral', 'Isosceles', 'Right',],
+
     },
     {
-        question: '\nQ : What is the alien race Loki sends to invade Earth in The Avengers?',
-        options: ['The Chitauri', 'The Skrulls', 'The Kree', 'The Flerkens'],
-        answer: '0'
+        question: '\nQ : If a triangle has 2 angles of 75 degree. What is the measure of third angle in degree?',
+        options: ['Equilateral', 'Isosceles', 'Right'],
+
     },
     {
-        question: '\nQ : Who does the Mad Titan sacrifice to acquire the Soul Stone?',
-        options: ['Nebula', 'Ebony Maw', 'Cull Obsidian', 'Gamora'],
-        answer: '3'
+        question: '\nQ : If a triangle has sides of 2cm, 3cm, 4cm, what is the type of triangle?',
+        options: ['Equilateral', 'Isosceles', 'Scalene'],
+
     }
 ]
+answersList = ['Captain', 'Vanir', 'Adamantium', 'The   ', 'Gamora']
+
+var userAnswers = []
 
 var questionDiv = document.querySelector('.div-game-question');
 
@@ -33,7 +36,12 @@ var optionTwoLabel = document.querySelector('#option-two');
 var optionThreeLabel = document.querySelector('#option-three');
 var optionFourLabel = document.querySelector('#option-four');
 
-var questionAnswerDiv = document.querySelector('.question-answer')
+var questionAnswerDiv = document.querySelector('.question-answer');
+
+var resultDiv = document.querySelector('.result-div')
+
+var submitBtn = document.querySelector('#submit')
+let score = 0;
 
 questions.forEach(question => {
 
@@ -52,5 +60,28 @@ questions.forEach(question => {
         optionPara.innerHTML = `<input type="radio" name ="options"value=${optionList[i]}>` + optionList[i] + '</input>';
         questionParagaph.appendChild(optionPara)
     }
+})
+
+submitBtn.addEventListener('click', function () {
+    let options = document.getElementsByName('options')
+    console.log(options);
+
+    for (let i = 0; i < options.length; i++) {
+        if (options[i].checked) {
+            console.log(options[i].value)
+            let answer = options[i].value;
+            userAnswers.push(answer)
+            //console.log(userAnswers)
+        }
+    }
+
+    for (let i = 0; i < answersList.length; i++) {
+        if (answersList[i] === userAnswers[i]) {
+            score++;
+        }
+    }
+    resultDiv.innerHTML = `<p> Your score is ` + score + `</p>`
+
+
 })
 

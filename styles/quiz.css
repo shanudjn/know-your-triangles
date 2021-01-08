@@ -7,3 +7,10 @@
 .option-div{
     border: 1px solid red;
 }
+#submit{
+    margin-left: 250px;
+    padding: 1rem;
+    font-family: 'Montserrat', sans-serif;
+
+    /* max-width: 600px; */
+}
