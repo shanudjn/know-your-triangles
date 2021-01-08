@@ -33,29 +33,23 @@ var optionTwoLabel = document.querySelector('#option-two');
 var optionThreeLabel = document.querySelector('#option-three');
 var optionFourLabel = document.querySelector('#option-four');
 
-var optionDiv = document.querySelector('.option-div')
+var questionAnswerDiv = document.querySelector('.question-answer')
 
 questions.forEach(question => {
 
     console.log(question.question);
     //create paragraph element and add question to it
-    let questionParagaph = document.createElement('p');
+    let questionParagaph = document.createElement('form');
     questionParagaph.innerText = question.question;
 
-    optionDiv.appendChild(questionParagaph)
-
-
-
-
-
-
+    questionAnswerDiv.appendChild(questionParagaph);
 
     console.log()
     let optionList = question.options;
     for (let i = 0; i < optionList.length; i++) {
         console.log(optionList[i])
-        let optionPara = document.createElement('p');
-        optionPara.innerText = optionList[i];
+        let optionPara = document.createElement('ul');
+        optionPara.innerHTML = `<input type="radio" name ="options"value=${optionList[i]}>` + optionList[i] + '</input>';
         questionParagaph.appendChild(optionPara)
     }
 })
