@@ -10,13 +10,13 @@ questions = [
 
     },
     {
-        question: '\nQ : If a triangle has 2 sides with equal lengths and 750 angle between them. What is the type of triangle?',
+        question: '\nQ : If a triangle has 2 sides with equal lengths and 75 deg angle between them. What is the type of triangle?',
         options: ['Equilateral', 'Isosceles', 'Right',],
 
     },
     {
         question: '\nQ : If a triangle has 2 angles of 75 degree. What is the measure of third angle in degree?',
-        options: ['Equilateral', 'Isosceles', 'Right'],
+        options: [30, 20, 10],
 
     },
     {
@@ -25,7 +25,7 @@ questions = [
 
     }
 ]
-answersList = ['Captain', 'Vanir', 'Adamantium', 'The   ', 'Gamora']
+answersList = ['Yes', 'No', 'Isosceles', 30, 'Scalene']
 
 var userAnswers = []
 
