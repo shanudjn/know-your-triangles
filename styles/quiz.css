@@ -1,0 +1,9 @@
+@import url("anglesoftriangle.css");
+
+.div-game-cards{
+    max-width: 600px;
+    margin: auto;
+}
+.option-div{
+    border: 1px solid red;
+}
